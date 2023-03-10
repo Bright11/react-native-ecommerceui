@@ -7,9 +7,15 @@ import {FlatList, ScrollView, TextInput} from 'react-native-gesture-handler';
 import productstyle from './productstyle';
 import category from './catgory';
 import {StyleSheet} from 'react-native/types';
-import items from './items';
+//import product from './items';
+import {useSelector, useDispatch} from 'react-redux';
+import {productsSlice} from '../store/productsSlice';
 const Product = ({navigation}) => {
+  const dispatch = useDispatch();
   const [pressed, setPressed] = useState(null);
+
+  const product = useSelector(state => state.products.products);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Product',
@@ -57,11 +63,15 @@ const Product = ({navigation}) => {
       <View style={productstyle.itemview_holder}>
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={items}
+          data={product}
           numColumns={2}
           renderItem={({item}) => (
             <Pressable
-              onPress={() => navigation.navigate('details', {item})}
+              // onPress={() => navigation.navigate('details', {item})}
+              onPress={() => {
+                dispatch(productsSlice.actions.setSelectedProduct(item.id));
+                navigation.navigate('details');
+              }}
               style={productstyle.itemview}>
               <Image style={productstyle.itemimg} source={item.image} />
               <View style={productstyle.itemnameview}>

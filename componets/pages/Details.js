@@ -5,8 +5,10 @@ import items from './items';
 import detailsstyle from './detailsstyles';
 import Feather from 'react-native-vector-icons/Feather';
 import {ScrollView} from 'react-native-gesture-handler';
+import {useSelector} from 'react-redux';
 const Details = ({navigation, route}) => {
-  const details = route.params.item;
+  // const details = route.params.item;
+  const details = useSelector(state => state.products.selectedProduct);
   useLayoutEffect(() => {
     navigation.setOptions({
       title: details.name,
