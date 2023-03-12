@@ -10,8 +10,13 @@ import Details from './componets/pages/Details';
 import CartPage from './componets/pages/CartPage';
 import {Provider} from 'react-redux';
 import {store} from './componets/store';
+//import {cartSlice} from './componets/store/cartSlice';
 const Stack = createNativeStackNavigator();
 const App = () => {
+  // add to cart
+  // const dispatch = useDispatch();
+
+  // the end
   return (
     <Provider store={store}>
       <NavigationContainer>

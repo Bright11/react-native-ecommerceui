@@ -1,6 +1,6 @@
 const product = [
   {
-    id: 16,
+    id: 1,
     name: 'USA Shoe',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -8,7 +8,7 @@ const product = [
     price: 75,
   },
   {
-    id: 17,
+    id: 2,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -16,7 +16,7 @@ const product = [
     price: 750,
   },
   {
-    id: 18,
+    id: 3,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -24,7 +24,7 @@ const product = [
     price: 75,
   },
   {
-    id: 19,
+    id: 4,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -32,7 +32,7 @@ const product = [
     price: 75,
   },
   {
-    id: 20,
+    id: 5,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -40,7 +40,7 @@ const product = [
     price: 75,
   },
   {
-    id: 1,
+    id: 6,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -48,7 +48,7 @@ const product = [
     price: 75,
   },
   {
-    id: 2,
+    id: 7,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -56,7 +56,7 @@ const product = [
     price: 50,
   },
   {
-    id: 3,
+    id: 8,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -64,7 +64,7 @@ const product = [
     price: 99,
   },
   {
-    id: 4,
+    id: 9,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -72,7 +72,7 @@ const product = [
     price: 700,
   },
   {
-    id: 5,
+    id: 10,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -80,7 +80,7 @@ const product = [
     price: 30,
   },
   {
-    id: 6,
+    id: 11,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -88,7 +88,7 @@ const product = [
     price: 20,
   },
   {
-    id: 7,
+    id: 12,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -96,7 +96,7 @@ const product = [
     price: 700,
   },
   {
-    id: 8,
+    id: 13,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -104,7 +104,7 @@ const product = [
     price: 600,
   },
   {
-    id: 9,
+    id: 14,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -112,7 +112,7 @@ const product = [
     price: 40,
   },
   {
-    id: 10,
+    id: 15,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -120,7 +120,7 @@ const product = [
     price: 25,
   },
   {
-    id: 11,
+    id: 16,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -128,7 +128,7 @@ const product = [
     price: 400,
   },
   {
-    id: 12,
+    id: 17,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -136,7 +136,7 @@ const product = [
     price: 300,
   },
   {
-    id: 13,
+    id: 18,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -144,7 +144,7 @@ const product = [
     price: 220,
   },
   {
-    id: 14,
+    id: 19,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",
@@ -152,7 +152,7 @@ const product = [
     price: 100,
   },
   {
-    id: 15,
+    id: 20,
     name: 'New case',
     description:
       "1I'm having some issues handling a press on an item in a flatlist. I currently get an error Cannot read",

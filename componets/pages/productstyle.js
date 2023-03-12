@@ -22,18 +22,36 @@ const productstyle = StyleSheet.create({
   cate_holder: {
     padding: 5,
     margin: 8,
+    padding: 10,
+    borderRadius: 10,
+  },
+  categoryactive: {
+    backgroundColor: '#8D94D5',
+    padding: 5,
+    margin: 8,
+    //backgroundColor: 'red',
+    padding: 10,
+    borderRadius: 10,
+  },
+
+  categoryactivetext: {
+    color: 'white',
+    fontSize: 20,
+    textTransform: 'capitalize',
+    fontFamily: 'Roboto-BoldItalic',
+    fontWeight: 500,
   },
   cate_holdertext: {
     fontSize: 20,
     textTransform: 'capitalize',
-    color: '#8D94D5',
+    color: 'black',
     fontFamily: 'Roboto-BoldItalic',
     fontWeight: 500,
   },
   // items style
   itemview_holder: {
     flex: 1,
-    // backgroundColor: 'red',
+    //backgroundColor: 'red',
     marginTop: 30,
   },
   itemview: {

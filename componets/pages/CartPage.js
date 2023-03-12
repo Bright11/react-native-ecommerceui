@@ -1,9 +1,18 @@
-import {View, Text, Image, SafeAreaView, Pressable, Alert} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  SafeAreaView,
+  Pressable,
+  Alert,
+  FlatList,
+} from 'react-native';
 import React, {useState} from 'react';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
-import cartitems from './cartdata';
+import items from './cartdata';
 import cartPagestyle from './cartPagestyle';
 import Feather from 'react-native-vector-icons/Feather';
+import {useSelector} from 'react-redux';
 const CartPage = () => {
   const [checkqty, setCheckqty] = useState();
 
@@ -12,17 +21,19 @@ const CartPage = () => {
       //Alert.alert('check qty', '7');
     }
   };
+  // const cartitems = useSelector(state => state.cart.items);
+  const cart = useSelector(state => state.cart.items);
   return (
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {cartitems?.map(cat => (
+        {cart?.map(cat => (
           <View>
             <View style={cartPagestyle.cartimgview}>
-              <Image style={cartPagestyle.cartimg} source={cat.image} />
+              {/* <Image style={cartPagestyle.cartimg} source={cat.image} /> */}
               <Text style={cartPagestyle.cartname}>{cat.name}</Text>
             </View>
             <View style={cartPagestyle.cartdeletview}>
-              <Text style={cartPagestyle.cartprics}>${cat.price}</Text>
+              <Text style={cartPagestyle.cartprics}>${cat.name}</Text>
               <View style={cartPagestyle.cartupdateqtyview}>
                 <Pressable
                   style={cartPagestyle.cartminuspress}
@@ -49,6 +60,7 @@ const CartPage = () => {
           <Text style={cartPagestyle.totaltext}>Tax $200</Text>
         </View>
       </ScrollView>
+
       <Pressable style={cartPagestyle.checkoutspress}>
         <Text style={cartPagestyle.checkouttext}>Checkout</Text>
       </Pressable>

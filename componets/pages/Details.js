@@ -5,7 +5,9 @@ import items from './items';
 import detailsstyle from './detailsstyles';
 import Feather from 'react-native-vector-icons/Feather';
 import {ScrollView} from 'react-native-gesture-handler';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {cartSlice} from './../store/cartSlice';
+import {productsSlice} from './../store/productsSlice';
 const Details = ({navigation, route}) => {
   // const details = route.params.item;
   const details = useSelector(state => state.products.selectedProduct);
@@ -14,6 +16,11 @@ const Details = ({navigation, route}) => {
       title: details.name,
     });
   }, [navigation]);
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    console.log('add to cart');
+    dispatch(cartSlice.actions.addCartItem({product}));
+  };
   return (
     <SafeAreaView style={detailsstyle.detailssafeview}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -28,7 +35,7 @@ const Details = ({navigation, route}) => {
           <Text style={detailsstyle.descriptiontitle}>Description</Text>
           <Text style={detailsstyle.description}>{details.description}</Text>
         </View>
-        <Pressable style={detailsstyle.addtocartbtn}>
+        <Pressable onPress={addToCart} style={detailsstyle.addtocartbtn}>
           <Text style={detailsstyle.addtocarttext}>Add to cart</Text>
           <Feather name="shopping-cart" size={24} color="white" />
         </Pressable>

@@ -10,6 +10,7 @@ import {StyleSheet} from 'react-native/types';
 //import product from './items';
 import {useSelector, useDispatch} from 'react-redux';
 import {productsSlice} from '../store/productsSlice';
+import {cartSlice} from './../store/cartSlice';
 const Product = ({navigation}) => {
   const dispatch = useDispatch();
   const [pressed, setPressed] = useState(null);
@@ -32,10 +33,15 @@ const Product = ({navigation}) => {
     });
   }, [navigation]);
 
-  const changecolor = ({cat}) => {
-    Alert.alert('Alert Title');
+  const changecolor = cat => {
+    //Alert.alert('AlertTitle', cat.name);
     // Alert.alert('Alert Title', 'My Alert Msg');
-    //setPressed(true);
+    setPressed(cat.name);
+  };
+  const addToCart = item => {
+    //dispatch(cartSlice.actions.addCartItem({product}));
+    //console.log('add to cart', item);
+    Alert.alert('success', item.name);
   };
   return (
     <SafeAreaView style={productstyle.safeareav}>
@@ -49,16 +55,29 @@ const Product = ({navigation}) => {
         />
       </View>
       <View>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {category?.map(cat => (
-            <Pressable
-              key={cat.id}
-              style={productstyle.cate_holder}
-              onPress={() => changecolor(cat)}>
-              <Text style={productstyle.cate_holdertext}>{cat.name}</Text>
-            </Pressable>
-          ))}
-        </ScrollView>
+        <FlatList
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          data={category}
+          renderItem={({item}) => (
+            <>
+              {pressed === item.name ? (
+                <Pressable style={productstyle.categoryactive}>
+                  <Text style={productstyle.categoryactivetext}>
+                    {item.name}
+                  </Text>
+                </Pressable>
+              ) : (
+                <Pressable
+                  onPress={() => changecolor(item)}
+                  style={productstyle.cate_holder}>
+                  <Text style={productstyle.cate_holdertext}>{item.name}</Text>
+                </Pressable>
+              )}
+            </>
+          )}
+          keyExtractor={item => item.id}
+        />
       </View>
       <View style={productstyle.itemview_holder}>
         <FlatList
@@ -76,7 +95,9 @@ const Product = ({navigation}) => {
               <Image style={productstyle.itemimg} source={item.image} />
               <View style={productstyle.itemnameview}>
                 <Text style={productstyle.itemname}>{item.name}</Text>
-                <Feather name="shopping-cart" size={24} color="#977EEC" />
+                <Pressable onPress={() => addToCart(item)}>
+                  <Feather name="shopping-cart" size={24} color="#977EEC" />
+                </Pressable>
               </View>
               <Text style={productstyle.description} numberOfLines={2}>
                 {item.description}

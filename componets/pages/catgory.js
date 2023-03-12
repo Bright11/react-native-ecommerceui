@@ -19,6 +19,14 @@ const category = [
     id: 5,
     name: 'bags',
   },
+  {
+    id: 6,
+    name: 'Car',
+  },
+  {
+    id: 7,
+    name: 'Laptops',
+  },
 ];
 
 export default category;
