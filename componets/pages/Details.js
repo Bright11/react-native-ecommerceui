@@ -11,6 +11,7 @@ import {productsSlice} from './../store/productsSlice';
 const Details = ({navigation, route}) => {
   // const details = route.params.item;
   const details = useSelector(state => state.products.selectedProduct);
+  //const product = useSelector(state => state.products.products);
   useLayoutEffect(() => {
     navigation.setOptions({
       title: details.name,
@@ -19,7 +20,7 @@ const Details = ({navigation, route}) => {
   const dispatch = useDispatch();
   const addToCart = () => {
     console.log('add to cart');
-    dispatch(cartSlice.actions.addCartItem({product}));
+    dispatch(cartSlice.actions.addCartItem({product: details}));
   };
   return (
     <SafeAreaView style={detailsstyle.detailssafeview}>
